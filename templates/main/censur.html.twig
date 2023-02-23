@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Censurator | {{ parent() }}{% endblock %}
+
+{% block body %}
+<h1>Test du service Censurator</h1>
+<h2>Description</h2>
+<div class="row">
+    <div class="col-12">{{ description }}</div>
+</div>
+<h2>Version nettoyée</h2>
+<div class="row">
+    <div class="col-12">{{ purified  }}</div>
+</div>
+{% endblock %}

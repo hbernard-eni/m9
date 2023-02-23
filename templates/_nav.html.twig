@@ -1,0 +1,33 @@
+{# NAVBAR BOOTSTRAP 5 #} 
+<nav class="navbar navbar-expand-md navbar-dark bg-dark rounded m-0" aria-label="navMain">
+    <a class="navbar-brand mx-3" href="{{ path("main_home") }}" title="Accueil"><i class="bi bi-shield-lock"></i> M9 Services</a>
+	<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMain">
+		<ul class="navbar-nav me-auto mb-2 mb-md-0">
+			{#Page d'accueil visible par tous #}
+		    <li class="nav-item">
+				<a class="nav-link" href="{{ path("main_home") }}" title="Accueil">Accueil</a>
+			</li>		
+
+			{% if app.user %}
+			    {# visible quand connecté, sans précision de rôle #}
+				<li class="nav-item">
+					<a class="nav-link" href="{{ path("main_test") }}" title="Test">Test</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ path("app_logout") }}" title="Logout">Logout</a>
+				</li>
+			{% else %}
+			    {# visible tous / non connectés (= tous quand le composant auth a été configuré #}
+				<li class="nav-item">
+					<a class="nav-link" href="{{ path("app_register") }}" title="Register">Register</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ path("app_login") }}" title="Login">Login</a>
+				</li>
+			{% endif %}		
+		</ul>					  
+	</div>
+</nav> 	

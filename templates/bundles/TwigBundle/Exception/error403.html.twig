@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Erreur 403{% endblock %}
+
+{% block body %}
+    <div class="text-center">
+        <div style="height: 300px">
+            <img src="{{ asset('/images/error-pages/error-403.png') }}" alt="" style="max-width: 100%; max-height: 100%">
+        </div>
+        <h2 class="mb-2">Sorry ! Vous n'avez pas les autorisations nécessaires pour accéder à cette page.</h2>
+        <a type="button" class="btn btn-secondary" href="{{ path('event') }}">Retourner à l'accueil</a>
+    </div>
+{% endblock %}

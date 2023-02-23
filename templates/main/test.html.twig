@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Test | {{ parent() }}{% endblock %}
+
+{% block body %}
+    <h2>Test</h2>
+    <p>Bonjour {{ app.user.firstname }}, tu es redirigé ici quand tu es authentifié.</p>
+{% endblock %}
+
